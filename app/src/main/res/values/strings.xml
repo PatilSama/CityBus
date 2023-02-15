@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CityBus</string>
+    <style name="abc" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">@android:color/holo_red_dark</item>
+    </style>
+    <string name="textStyle">bolt|italic</string>
+</resources>

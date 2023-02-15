@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:weightSum="5"
+    android:id="@+id/nearestBusStop"
+    android:layout_height="wrap_content">
+    <ImageButton
+        android:id="@+id/stopIcon"
+        android:layout_weight="2"
+        android:layout_margin="5dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_baseline_directions_bus_24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ImageButton>
+
+    <TextView
+        android:id="@+id/nearStopName"
+        android:layout_weight="1"
+        android:text="Near Stop"
+        android:gravity="start"
+        android:paddingStart="10dp"
+        android:textColor="@color/back_theme"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    <TextView
+        android:id="@+id/nearStopDist"
+        android:layout_weight="2"
+        android:text="Dis-KM"
+        android:gravity="start"
+        android:paddingStart="10dp"
+        android:textColor="@color/back_theme"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
+</LinearLayout>

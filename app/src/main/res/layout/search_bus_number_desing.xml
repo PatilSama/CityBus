@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_marginTop="3dp"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_weight="2.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_directions_bus_24"></ImageView>
+
+        <TextView
+            android:id="@+id/txtNameOfBus"
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Name of bus"
+            android:textColor="@color/back_theme"
+            android:textSize="17dp"
+            android:textStyle="bold"></TextView>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txtBusNumber"
+        android:layout_marginStart="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:text="Bus Number"
+        android:textColor="@color/back_theme"
+        android:textSize="17dp"
+        android:textStyle="bold"></TextView>
+    <TextView
+        android:id="@+id/txtFromTo"
+        android:layout_marginStart="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:text="From_To"
+        android:textColor="@color/back_theme"
+        android:textSize="17dp"
+        android:textStyle="bold"></TextView>
+
+
+</LinearLayout>
