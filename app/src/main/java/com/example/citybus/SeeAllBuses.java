@@ -1,14 +1,20 @@
 package com.example.citybus;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -70,18 +76,18 @@ public class SeeAllBuses extends AppCompatActivity {
     }
     private void buildRecyclerView() {
         SearchBusNumberList = new ArrayList<SearchBusNumberModel>();
-        SearchBusNumberList.add(new SearchBusNumberModel("a","MH12MK7873","Upper Depot","Swargate"));
-        SearchBusNumberList.add(new SearchBusNumberModel("b","MH12MK8999","Swargate","Indira Nagar Bus Stop"));
-        SearchBusNumberList.add(new SearchBusNumberModel("c","MH12MK4028","Pune Manapa Bus Station","Swargate"));
-        SearchBusNumberList.add(new SearchBusNumberModel("d","MH12MK0110","Pune Station Bus Stand","Pune Manapa Bus Station"));
-        SearchBusNumberList.add(new SearchBusNumberModel("e","MH12MK2112","Pune Manapa Bus Station","Swargate"));
+        SearchBusNumberList.add(new SearchBusNumberModel("Upper Depot","MH12MK7873","Upper Depot","Swargate"));
+        SearchBusNumberList.add(new SearchBusNumberModel("Swargate","MH12MK8999","Swargate","Indira Nagar Bus Stop"));
+        SearchBusNumberList.add(new SearchBusNumberModel("Pune Manapa Bus Station","MH12MK4028","Pune Manapa Bus Station","Swargate"));
+        SearchBusNumberList.add(new SearchBusNumberModel("Pune Station Bus Stand","MH12MK0110","Pune Station Bus Stand","Pune Manapa Bus Station"));
+        SearchBusNumberList.add(new SearchBusNumberModel("Swargate","MH12MK2112","Pune Manapa Bus Station","Swargate"));
 
         rvSearchBusNumber.setLayoutManager(new LinearLayoutManager(this));
         rvSearchBusNumber.setHasFixedSize(true);
         rvSearchBusNumberAdapter = new RvSearchBusNumberAdapter(context,SearchBusNumberList);
-        DividerItemDecoration itemDecorator = new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);
-        itemDecorator.setDrawable(getResources().getDrawable(R.drawable.rcdevider_layout));
-        rvSearchBusNumber.addItemDecoration(itemDecorator);
+//        DividerItemDecoration itemDecorator = new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);
+//        itemDecorator.setDrawable(getResources().getDrawable(R.drawable.rcdevider_layout));
+//        rvSearchBusNumber.addItemDecoration(itemDecorator);
         rvSearchBusNumber.setAdapter(rvSearchBusNumberAdapter);
     }
 }

@@ -75,11 +75,11 @@ public class SearchBusNumber extends AppCompatActivity {
 
     private void buildRecyclerView() {
         SearchBusNumberList = new ArrayList<SearchBusNumberModel>();
-        SearchBusNumberList.add(new SearchBusNumberModel("a","MH12MK7873","Upper Depot","Swargate"));
-        SearchBusNumberList.add(new SearchBusNumberModel("b","MH12MK8999","Swargate","Indira Nagar Bus Stop"));
-        SearchBusNumberList.add(new SearchBusNumberModel("c","MH12MK4028","Pune Manapa Bus Station","Swargate"));
-        SearchBusNumberList.add(new SearchBusNumberModel("d","MH12MK0110","Pune Station Bus Stand","Pune Manapa Bus Station"));
-        SearchBusNumberList.add(new SearchBusNumberModel("e","MH12MK2112","Pune Manapa Bus Station","Swargate"));
+        SearchBusNumberList.add(new SearchBusNumberModel("Upper Depot","MH12MK7873","Upper Depot","Swargate"));
+        SearchBusNumberList.add(new SearchBusNumberModel("Swargate","MH12MK8999","Swargate","Indira Nagar Bus Stop"));
+        SearchBusNumberList.add(new SearchBusNumberModel("Pune Manapa Bus Station","MH12MK4028","Pune Manapa Bus Station","Swargate"));
+        SearchBusNumberList.add(new SearchBusNumberModel("Pune Station Bus Stand","MH12MK0110","Pune Station Bus Stand","Pune Manapa Bus Station"));
+        SearchBusNumberList.add(new SearchBusNumberModel("Swargate","MH12MK2112","Pune Manapa Bus Station","Swargate"));
 
         rvSearchBusNumber.setLayoutManager(new LinearLayoutManager(this));
         rvSearchBusNumber.setHasFixedSize(true);

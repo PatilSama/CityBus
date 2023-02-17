@@ -51,9 +51,9 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_marginStart="250dp"
-                        android:layout_marginTop="65dp"
-                        android:background="@drawable/button_shape"
-                        android:src="@drawable/icon_bet_from_to"></ImageButton>
+                        android:layout_marginTop="58dp"
+                        android:background="@drawable/button_shape_of_navigator"
+                        android:src="@drawable/icon_bet_from_to_navigator"></ImageButton>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/searchFrom"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="@dimen/margin_50"
                                 android:drawableLeft="@drawable/from_icon"
                                 android:drawablePadding="6dp"
                                 android:inputType="text"></com.google.android.material.textfield.TextInputEditText>
@@ -91,10 +91,10 @@
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="30dp"
-                            android:layout_marginTop="25dp"
-                            android:layout_marginEnd="30dp"
-                            android:layout_marginBottom="25dp"
+                            android:layout_marginStart="@dimen/margin_30"
+                            android:layout_marginTop="@dimen/margin_25"
+                            android:layout_marginEnd="@dimen/margin_30"
+                            android:layout_marginBottom="@dimen/margin_18"
                             android:background="@drawable/textdesing"
                             android:hint="To:"
                             android:paddingStart="10dp"
@@ -109,7 +109,7 @@
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/SearchTo"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="@dimen/margin_50"
                                 android:drawableLeft="@drawable/to_icon"
                                 android:drawablePadding="6dp"
                                 android:inputType="text">
@@ -121,9 +121,9 @@
                             android:id="@+id/btnSearchBuses"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginStart="35dp"
-                            android:layout_marginEnd="30dp"
-                            android:layout_marginBottom="25dp"
+                            android:layout_marginStart="@dimen/margin_35"
+                            android:layout_marginEnd="@dimen/margin_30"
+                            android:layout_marginBottom="@dimen/margin_20"
                             android:text="Search Buses"
                             android:textAllCaps="false"
                             android:textColor="@color/white"
@@ -140,9 +140,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="20dp">
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_20">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -155,7 +155,7 @@
                         <LinearLayout
                             android:id="@+id/searchBusNumber"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
+                            android:layout_height="@dimen/margin_37"
                             android:layout_marginTop="5dp"
                             android:layout_marginEnd="5dp"
                             android:layout_marginBottom="5dp"
@@ -174,7 +174,7 @@
                         <LinearLayout
                             android:id="@+id/searchBusStop"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
+                            android:layout_height="@dimen/margin_37"
                             android:layout_marginStart="5dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
@@ -209,18 +209,19 @@
                     android:paddingStart="5dp"
                     android:text="Nearest Bus Stop"
                     android:textColor="@color/back_theme"
-                    android:textSize="16dp"
+                    android:textSize="@dimen/margin_14"
                     android:textStyle="bold"></TextView>
 
                 <TextView
+                    android:id="@+id/seeAllBusesMap"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:gravity="center"
-                    android:paddingStart="5dp"
+                    android:paddingStart="@dimen/margin_5"
                     android:text="See All"
                     android:textColor="@color/seeAllColor"
-                    android:textSize="16dp"
+                    android:textSize="@dimen/margin_14"
                     android:textStyle="bold|italic"></TextView>
             </LinearLayout>
 
@@ -244,22 +245,22 @@
 
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/margin_30"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
                             android:background="@android:color/transparent"
-                            android:src="@drawable/ic_baseline_directions_bus_24"></ImageView>
+                            android:src="@mipmap/bus_route_icon"></ImageView>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginStart="@dimen/margin_20"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:layout_marginBottom="@dimen/margin_5"
                             android:text="Route Name"
                             android:textColor="@color/back_theme"
-                            android:textSize="17dp"
+                            android:textSize="@dimen/margin_14"
                             android:textStyle="bold"></TextView>
                     </LinearLayout>
 
@@ -267,18 +268,18 @@
                         android:id="@+id/rcNearBusStop"
                         android:layout_width="match_parent"
                         android:layout_height="130dp"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="@dimen/margin_5"
                         android:layout_marginTop="40dp"
                         android:layout_marginEnd="5dp"></androidx.recyclerview.widget.RecyclerView>
 
                     <Button
                         android:id="@+id/btnSeeAllBuses"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
+                        android:layout_height="@dimen/margin_40"
+                        android:layout_marginStart="@dimen/margin_5"
                         android:layout_marginTop="175dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginEnd="@dimen/margin_5"
+                        android:layout_marginBottom="@dimen/margin_7"
                         android:background="@drawable/search_corner_desing"
                         android:text="See All Buses"
                         android:textAllCaps="false"
@@ -294,11 +295,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="@dimen/margin_25"
+                    android:layout_marginTop="@dimen/margin_10"
                     android:text="Buses Around You"
                     android:textColor="@color/back_theme"
-                    android:textSize="17dp"
+                    android:textSize="@dimen/margin_14"
                     android:textStyle="bold"></TextView>
 
                 <androidx.cardview.widget.CardView

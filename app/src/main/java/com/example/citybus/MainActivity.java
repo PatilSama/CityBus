@@ -1,12 +1,9 @@
 package com.example.citybus;
 
-import static java.security.AccessController.getContext;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,18 +12,16 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.location.Location;
 import android.location.LocationRequest;
 import android.os.Bundle;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.citybus.ConstantClass.Model1;
+import com.example.citybus.ModelClases.NearestBusStopModel;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
@@ -39,6 +34,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     Context context;
@@ -50,8 +47,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     Button btnSearchBuses, btnSeeAllBuses;
     LinearLayout searchBusNumber, searchBusStop, nearestBusStop;
     CardView busNearYou;
+    TextView seeAllBusesMap;
+    private ArrayList<NearestBusStopModel> nearestBusStopModelArrayList;
     //    String selectBusStop = null;
-    String[] nearStop = {"Karve", "Warge", "Deccan", "Kothud"}, nearStopDist = {"1", "2", "1", "2"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +65,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         searchBusStop = findViewById(R.id.searchBusStop);
         busNearYou = findViewById(R.id.busNearYou);
         btnSeeAllBuses = findViewById(R.id.btnSeeAllBuses);
+        seeAllBusesMap = findViewById(R.id.seeAllBusesMap);
 
+        seeAllBusesMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, BusAroundYouMap.class));
+            }
+        });
         String selectedStop = getIntent().getStringExtra("SelectStop");
         if (Model1.SelectType.equals("Search Stop")) {
             Model1.stop_From = selectedStop;
@@ -89,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View view) {
 //                Toast.makeText(context, "OK", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(MainActivity.this, BusAroundYou.class));
+                startActivity(new Intent(MainActivity.this, BusAroundYouMap.class));
             }
         });
 
@@ -134,6 +140,23 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         });
         rcNearBusStop = findViewById(R.id.rcNearBusStop);
+
+
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
+        buildRecyclerView();
+    }
+
+    private void buildRecyclerView() {
+        nearestBusStopModelArrayList = new ArrayList<>();
+        nearestBusStopModelArrayList.add(new NearestBusStopModel("Karve","1","A1"));
+        nearestBusStopModelArrayList.add(new NearestBusStopModel("Warge","2","B2"));
+        nearestBusStopModelArrayList.add(new NearestBusStopModel("Deccan","2","A2"));
+        nearestBusStopModelArrayList.add(new NearestBusStopModel("Kothud","1","C1"));
+        nearestBusStopModelArrayList.add(new NearestBusStopModel("Swargate","1.5","C3"));
+
         rcNearBusStop.setLayoutManager(new LinearLayoutManager(context));
 //        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(rcNearBusStop.getContext(),
 //                new LinearLayoutManager(context).getOrientation());
@@ -141,12 +164,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         DividerItemDecoration itemDecorator = new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);
         itemDecorator.setDrawable(getResources().getDrawable(R.drawable.rcdevider_layout));
         rcNearBusStop.addItemDecoration(itemDecorator);
-        rcNearBusStop.setAdapter(new RcNearBusStop(context, nearStop, nearStopDist));
-
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-
+        rcNearBusStop.setAdapter(new RcNearBusStop(context,nearestBusStopModelArrayList));
     }
 
     private boolean searchBuses() {
@@ -174,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(@NonNull LatLng latLng) {
-                startActivity(new Intent(MainActivity.this, BusAroundYou.class));
+                startActivity(new Intent(MainActivity.this, BusAroundYouMap.class));
             }
         });
     }

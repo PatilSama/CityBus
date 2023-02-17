@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class BusAroundYou extends AppCompatActivity  implements OnMapReadyCallback {
+public class BusAroundYouMap extends AppCompatActivity  implements OnMapReadyCallback {
     GoogleMap googleMap;
     Context context;
     Marker currentMarker;
@@ -97,7 +97,7 @@ public class BusAroundYou extends AppCompatActivity  implements OnMapReadyCallba
 //        googleMap.addMarker(marker);
         if (lctStatus != false) {
 //            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15.5f));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12.5F));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15.5F));
             lctStatus = false;
         }
 

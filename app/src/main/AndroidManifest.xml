@@ -25,11 +25,11 @@
             android:theme="@style/One"
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".SlashScreen"
@@ -40,13 +40,20 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".SelectStop"></activity>
-        <activity android:name=".SearchBuses" android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".SearchBusNumber" android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".SearchBusStop" android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".BusOnStop_Activity" android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".BusAroundYou" android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".SeeAllBuses" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".SelectStop" android:label="Select Bus"></activity>
+        <activity android:name=".SearchBuses" android:parentActivityName=".MainActivity" android:label="Search Buses"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SearchBusNumber" android:parentActivityName=".MainActivity" android:label="Search Bus Number"></activity>
+        <activity android:name=".SearchBusStop" android:parentActivityName=".MainActivity" android:label="Search Bus Stop"></activity>
+        <activity android:name=".BusOnStop_Activity" android:parentActivityName=".MainActivity" android:label="Bus On Stop"></activity>
+        <activity android:name=".BusAroundYouMap" android:parentActivityName=".MainActivity" android:label="Bus Around You"></activity>
+        <activity android:name=".SeeAllBuses" android:parentActivityName=".MainActivity" android:label="All Bus Map"></activity>
     </application>
 
 </manifest>

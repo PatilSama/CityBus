@@ -10,4 +10,6 @@
     <color name="back_theme">#2C2B2B</color>
     <color name="boxStrokeColor">#2C2B2B</color>
     <color name="seeAllColor">#FF6200EE</color>
+    <color name="icon_color_black">#FF000000</color>
+    <color name="KM_text_red">#EF0B0B</color>
 </resources>
