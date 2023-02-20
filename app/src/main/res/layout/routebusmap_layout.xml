@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <androidx.fragment.app.FragmentContainerView
-        android:layout_width="match_parent"
         android:id="@+id/mapBusAroundYou"
         android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
         android:layout_height="match_parent">
     </androidx.fragment.app.FragmentContainerView>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,9 +21,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:elevation="@dimen/margin_3"
             android:layout_marginBottom="3dp"
             android:background="@android:color/white"
+            android:elevation="@dimen/margin_3"
             app:cardCornerRadius="20dp">
 
             <ImageButton
@@ -36,6 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
@@ -52,14 +55,14 @@
                     app:boxStrokeColor="@color/boxStrokeColor"
                     app:helperTextEnabled="true"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Small">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/searchFrom"
                         android:layout_width="match_parent"
-                        android:paddingStart="@dimen/margin_5"
                         android:layout_height="@dimen/margin_50"
                         android:drawableLeft="@drawable/from_icon"
-                        android:inputType="text">
-                    </com.google.android.material.textfield.TextInputEditText>
+                        android:inputType="text"
+                        android:paddingStart="@dimen/margin_5"></com.google.android.material.textfield.TextInputEditText>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -79,28 +82,28 @@
                     app:boxStrokeColor="@color/boxStrokeColor"
                     app:helperTextEnabled="true"
                     app:hintTextAppearance="@style/TextAppearance.AppCompat.Small">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/searchTo"
                         android:layout_width="match_parent"
-                        android:paddingStart="@dimen/margin_5"
                         android:layout_height="@dimen/margin_50"
                         android:drawableLeft="@drawable/to_icon"
-                        android:inputType="text">
-                    </com.google.android.material.textfield.TextInputEditText>
+                        android:inputType="text"
+                        android:paddingStart="@dimen/margin_5"></com.google.android.material.textfield.TextInputEditText>
                 </com.google.android.material.textfield.TextInputLayout>
-
-<!--                <Button-->
-<!--                    android:id="@+id/btnSearchBuses"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_marginStart="@dimen/margin_35"-->
-<!--                    android:layout_marginEnd="@dimen/margin_30"-->
-<!--                    android:layout_marginBottom="@dimen/margin_20"-->
-<!--                    android:text="Search Buses"-->
-<!--                    android:textAllCaps="false"-->
-<!--                    android:textColor="@color/white"-->
-<!--                    android:textStyle="bold"></Button>-->
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </FrameLayout>
-</FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@drawable/bottom_sheet_design"
+        android:fitsSystemWindows="true"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+        <include layout="@layout/bottomsheet_layout_desing"></include>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

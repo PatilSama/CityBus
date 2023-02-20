@@ -25,11 +25,11 @@
             android:theme="@style/One"
             android:name=".MainActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".SlashScreen"
@@ -41,13 +41,13 @@
                 android:value="" />
         </activity>
         <activity android:name=".SelectStop" android:label="Select Bus"></activity>
-        <activity android:name=".SearchBuses" android:parentActivityName=".MainActivity" android:label="Search Buses"
+        <activity android:name=".RouteBusMap" android:parentActivityName=".MainActivity" android:label="Route Bus"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity android:name=".SearchBusNumber" android:parentActivityName=".MainActivity" android:label="Search Bus Number"></activity>
         <activity android:name=".SearchBusStop" android:parentActivityName=".MainActivity" android:label="Search Bus Stop"></activity>

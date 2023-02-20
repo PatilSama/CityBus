@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View view) {
                 if (searchBuses()) {
-                    startActivity(new Intent(MainActivity.this, SearchBuses.class)
+                    startActivity(new Intent(MainActivity.this, RouteBusMap.class)
                             .putExtra("stopFrom", searchFrom.getText().toString().trim()).putExtra("stopTo", searchTo.getText().toString().trim()));
                 }
             }

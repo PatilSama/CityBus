@@ -80,11 +80,13 @@
 
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/searchFrom"
+                              android:inputType="none"
+                                android:textIsSelectable="true"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/margin_50"
                                 android:drawableLeft="@drawable/from_icon"
-                                android:drawablePadding="6dp"
-                                android:inputType="text"></com.google.android.material.textfield.TextInputEditText>
+                                android:drawablePadding="6dp">
+                            </com.google.android.material.textfield.TextInputEditText>
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
@@ -105,18 +107,16 @@
                             app:boxStrokeColor="@color/boxStrokeColor"
                             app:helperTextEnabled="true"
                             app:hintTextAppearance="@style/TextAppearance.AppCompat.Small">
-
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/SearchTo"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/margin_50"
                                 android:drawableLeft="@drawable/to_icon"
                                 android:drawablePadding="6dp"
-                                android:inputType="text">
-
+                                android:inputType="none"
+                                android:textIsSelectable="true">
                             </com.google.android.material.textfield.TextInputEditText>
                         </com.google.android.material.textfield.TextInputLayout>
-
                         <Button
                             android:id="@+id/btnSearchBuses"
                             android:layout_width="match_parent"
