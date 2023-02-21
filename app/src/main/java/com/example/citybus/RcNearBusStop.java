@@ -39,7 +39,7 @@ public class RcNearBusStop extends RecyclerView.Adapter<RcNearBusStop.NearBusSto
     public void onBindViewHolder(@NonNull NearBusStopViewHolder holder, int position) {
         NearestBusStopModel nearestBusStopModel = nearestBusStopModelArrayList.get(position);
         holder.nearStopName.setText(nearestBusStopModel.getStopName());
-        holder.nearStopDist.setText(nearestBusStopModel.getStopDist() + " KM");
+        holder.nearStopDist.setText(nearestBusStopModel.getStopDist() + " Mins");
         holder.txtBusTripNo.setText(nearestBusStopModel.getBusTripNo());
         holder.nearestBusStop.setOnClickListener(new View.OnClickListener() {
             @Override

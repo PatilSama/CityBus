@@ -9,6 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_marginBottom="@dimen/margin_2"
         app:cardCornerRadius="@dimen/margin_2"
+        android:id="@+id/cardSearchBusNumberTpSelectBusMap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -34,20 +35,20 @@
                 android:paddingStart="10dp"
                 android:text="Name of bus"
                 android:textColor="@color/back_theme"
-                android:textSize="@dimen/textSize_14"
+                android:textSize="@dimen/textSize_17"
                 android:textStyle="bold"></TextView>
 
         </LinearLayout>
         <TextView
             android:id="@+id/txtBusNumber"
             android:layout_marginStart="@dimen/margin_60"
-            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_25"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/margin_14"
             android:text="Bus Number"
 
-            android:textColor="@color/back_theme"
+            android:textColor="@color/bus_no_text"
             android:textSize="@dimen/textSize_14"
             android:textStyle="bold"></TextView>
         <TextView

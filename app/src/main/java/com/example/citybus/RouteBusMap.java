@@ -55,6 +55,13 @@ public class RouteBusMap extends AppCompatActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapBusAroundYou);
         mapFragment.getMapAsync(this);
         buildRecyclerView();
+
+//        collapsExpandIcon.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
     }
 
     private void buildBottomSheet() {

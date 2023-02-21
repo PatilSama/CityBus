@@ -9,6 +9,7 @@
     <androidx.cardview.widget.CardView
         android:elevation="8dp"
         app:cardCornerRadius="3dp"
+        android:id="@+id/cardSearchBusStopToRouteBus"
         android:layout_marginBottom="@dimen/margin_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

@@ -36,6 +36,7 @@
     </style>
 
 
+    <dimen name="textSize_17">17dp</dimen>
     <dimen name="textSize_14">14dp</dimen>
 
     <dimen name="margin_1">1dp</dimen>

@@ -1,5 +1,6 @@
 package com.example.citybus;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -17,8 +18,10 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.citybus.ConstantClass.Model1;
 import com.example.citybus.ModelClases.NearestBusStopModel;
@@ -47,7 +50,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     Button btnSearchBuses, btnSeeAllBuses;
     LinearLayout searchBusNumber, searchBusStop, nearestBusStop;
     CardView busNearYou;
-    TextView seeAllBusesMap;
+//    ImageButton btnBackPage;
+    TextView nearBusStopName,changeNearBusStop;
     private ArrayList<NearestBusStopModel> nearestBusStopModelArrayList;
     //    String selectBusStop = null;
 
@@ -65,12 +69,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         searchBusStop = findViewById(R.id.searchBusStop);
         busNearYou = findViewById(R.id.busNearYou);
         btnSeeAllBuses = findViewById(R.id.btnSeeAllBuses);
-        seeAllBusesMap = findViewById(R.id.seeAllBusesMap);
+        changeNearBusStop = findViewById(R.id.changeNearBusStop);
+        nearBusStopName = findViewById(R.id.nearBusStopName);
 
-        seeAllBusesMap.setOnClickListener(new View.OnClickListener() {
+        String ChangeNearStop = getIntent().getStringExtra("ChangeNearStop");
+        if(ChangeNearStop!=null)
+        {
+            nearBusStopName.setText(ChangeNearStop);
+        }
+        changeNearBusStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, BusAroundYouMap.class));
+                startActivity(new Intent(MainActivity.this,ChangeNearBustStop.class));
             }
         });
         String selectedStop = getIntent().getStringExtra("SelectStop");
@@ -88,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, SeeAllBuses.class));
+
             }
         });
 
@@ -143,8 +154,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+//        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+//        mapFragment.getMapAsync(this);
 
         buildRecyclerView();
     }
