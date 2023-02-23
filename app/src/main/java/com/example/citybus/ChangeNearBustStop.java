@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -37,6 +38,9 @@ public class ChangeNearBustStop extends AppCompatActivity {
         rvChangeNearBusStopModelArrayList.add(new RvChangeNearBusStopModel("Swargate","2.5"));
 
         rvChangeSelectBusStop.setLayoutManager(new LinearLayoutManager(this));
+        DividerItemDecoration itemDecorator = new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);
+        itemDecorator.setDrawable(getResources().getDrawable(R.drawable.rcdevider_layout));
+        rvChangeSelectBusStop.addItemDecoration(itemDecorator);
         rvChangeSelectBusStop.setAdapter(new RvChangeNearBusStopAdapter(context,rvChangeNearBusStopModelArrayList));
 
     }

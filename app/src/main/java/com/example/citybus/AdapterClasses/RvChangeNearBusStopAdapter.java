@@ -36,7 +36,7 @@ public class RvChangeNearBusStopAdapter extends RecyclerView.Adapter<RvChangeNea
     public void onBindViewHolder(@NonNull RvChangeNearBusStopViewHolder holder, int position) {
         RvChangeNearBusStopModel rvChangeNearBusStopModel = rvChangeNearBusStopModelArrayList.get(position);
         holder.txtNearStopName.setText(rvChangeNearBusStopModel.getNearStop());
-        holder.txtStopKm.setText(rvChangeNearBusStopModel.getStopKm());
+        holder.txtStopKm.setText(rvChangeNearBusStopModel.getStopKm()+" KM");
         holder.lyChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

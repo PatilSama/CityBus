@@ -44,10 +44,10 @@ public class RcNearBusStop extends RecyclerView.Adapter<RcNearBusStop.NearBusSto
         holder.nearestBusStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, SeeAllBuses.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("stop",nearestBusStopModel.getStopName());
-                context.startActivity(intent);
+//                Intent intent = new Intent(context, SeeAllBuses.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                intent.putExtra("stop",nearestBusStopModel.getStopName());
+//                context.startActivity(intent);
             }
         });
     }

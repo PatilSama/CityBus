@@ -50,7 +50,7 @@ public class BusOnStop_Activity extends AppCompatActivity implements OnMapReadyC
 
         View bottomSheet = findViewById(R.id.nestedBottomSheet);
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
-        bottomSheetBehavior.setPeekHeight(120);
+        bottomSheetBehavior.setPeekHeight(170);
         bottomSheetBehavior.setHideable(true);
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override

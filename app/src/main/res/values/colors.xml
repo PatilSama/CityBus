@@ -12,6 +12,7 @@
     <color name="seeAllColor">#FF6200EE</color>
     <color name="icon_color_black">#FF000000</color>
     <color name="KM_text_red">#EF0B0B</color>
+    <color name="Near_Stop_Text">#EF0B0B</color>
     <color name="MINS_text_red">#EF0B0B</color>
     <color name="selectBusRout_text">#EF0B0B</color>
     <color name="bus_no_text">#061EF8</color>

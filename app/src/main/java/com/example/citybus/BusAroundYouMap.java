@@ -58,7 +58,7 @@ public class BusAroundYouMap extends AppCompatActivity implements OnMapReadyCall
             getCurrentUserLocation();
             //   accPolylineLocationServer();
         }
-        showBusStop();
+//        showBusStop();
     }
 
     private void showBusStop() {

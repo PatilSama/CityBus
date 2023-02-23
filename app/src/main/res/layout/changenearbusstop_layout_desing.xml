@@ -17,12 +17,16 @@
         android:id="@+id/txtNearStopName"
         android:text="Near Stop Name"
         android:layout_weight="0.8"
+        android:textColor="@color/back_theme"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></TextView>
     <TextView
         android:id="@+id/txtStopKm"
         android:text="KM"
         android:layout_weight="1.7"
+        android:textColor="@color/KM_text_red"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></TextView>
 

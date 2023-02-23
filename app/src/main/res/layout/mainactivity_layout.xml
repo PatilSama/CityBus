@@ -123,7 +123,7 @@
                             android:layout_marginStart="@dimen/margin_35"
                             android:layout_marginEnd="@dimen/margin_30"
                             android:layout_marginBottom="@dimen/margin_20"
-                            android:text="Search Buses"
+                            android:text="Search"
                             android:textAllCaps="false"
                             android:textColor="@color/white"
                             android:textStyle="bold"></Button>
@@ -210,7 +210,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1.5"
                         android:paddingStart="5dp"
-                        android:text="Nearest Bus Stop"
+                        android:text="Nearest Stop:"
                         android:textColor="@color/back_theme"
                         android:textSize="@dimen/margin_14"
                         android:textStyle="bold"></TextView>
@@ -227,12 +227,13 @@
                         android:textSize="@dimen/margin_14"
                         android:textStyle="bold|italic"></TextView>
                     <TextView
+                        android:id="@+id/showNearestStop"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.8"
                         android:gravity="center"
                         android:paddingStart="@dimen/margin_5"
-                        android:text="Show On Map"
+                        android:text="On Map"
                         android:textColor="@color/seeAllColor"
                         android:textSize="@dimen/margin_14"
                         android:textStyle="bold|italic"></TextView>
@@ -241,8 +242,9 @@
                     android:id="@+id/nearBusStopName"
                     android:textStyle="bold"
                     android:textSize="@dimen/textSize_14"
+                    android:textColor="@color/Near_Stop_Text"
                     android:text="Mahesh Society"
-                    android:layout_marginStart="@dimen/margin_30"
+                    android:layout_marginStart="@dimen/margin_75"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"></TextView>
             </LinearLayout>
@@ -285,6 +287,16 @@
                             android:textColor="@color/back_theme"
                             android:textSize="@dimen/margin_14"
                             android:textStyle="bold"></TextView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="140dp"
+                            android:layout_marginTop="@dimen/margin_10"
+                            android:layout_marginBottom="@dimen/margin_5"
+                            android:text="Coming In"
+                            android:textColor="@color/back_theme"
+                            android:textSize="@dimen/margin_14"
+                            android:textStyle="bold"></TextView>
                     </LinearLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
@@ -304,7 +316,7 @@
                         android:layout_marginEnd="@dimen/margin_5"
                         android:layout_marginBottom="@dimen/margin_7"
                         android:background="@drawable/search_corner_desing"
-                        android:text="See All Buses"
+                        android:text="All Buses"
                         android:textAllCaps="false"
                         android:textStyle="bold"></Button>
                 </androidx.cardview.widget.CardView>
@@ -334,13 +346,13 @@
                     android:layout_marginEnd="20dp"
                     app:cardCornerRadius="10dp">
 
-<!--                    <androidx.fragment.app.FragmentContainerView-->
-<!--                        android:id="@+id/map"-->
-<!--                        android:name="com.google.android.gms.maps.SupportMapFragment"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="match_parent"-->
-<!--                        android:layout_margin="10dp"-->
-<!--                        android:background="@drawable/textdesing"></androidx.fragment.app.FragmentContainerView>-->
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/textdesing"></androidx.fragment.app.FragmentContainerView>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
         </LinearLayout>

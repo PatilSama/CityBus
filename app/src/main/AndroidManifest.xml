@@ -8,28 +8,34 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
+        android:supportsRtl="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:theme="@style/Theme.CityBus"
         tools:targetApi="31">
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAZkLku2KcY7CT5D5sEfeCMsLAuXoNBvG8 " />
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCB7Xz7_9bZc5OCPDjzjOW7NbvVPMocYfs"></meta-data>
+        <!-- sama111patil-->
+<!--        <meta-data-->
+<!--            android:name="com.google.android.geo.API_KEY"-->
+<!--            android:value="AIzaSyAZkLku2KcY7CT5D5sEfeCMsLAuXoNBvG8 " />-->
 <!--            android:value="AIzaSyCwg-nvAUsS3DdHutCKSv7PkiKjB33ApFA" />-->
 <!--        android:value="${MAPS_API_KEY}"-->
         <activity
             android:theme="@style/One"
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".SlashScreen"
@@ -59,6 +65,15 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
+        <activity android:name=".DirectionsAPICall" android:parentActivityName=".MainActivity" android:label="DirectionApi"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MapActivitys.ShowNearestStopMap_Activity" android:parentActivityName=".MainActivity" android:label="Nearest Stop"></activity>
         <activity android:name=".ChangeNearBustStop" android:parentActivityName=".MainActivity" android:label="Change Bus Stop"></activity>
         <activity android:name=".BusAroundYouMap" android:parentActivityName=".MainActivity" android:label="Bus Around You"></activity>
         <activity android:name=".SeeAllBuses" android:parentActivityName=".MainActivity" android:label="All Bus Map"></activity>

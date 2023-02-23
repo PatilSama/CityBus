@@ -68,7 +68,7 @@ public class RouteBusMap extends AppCompatActivity implements OnMapReadyCallback
 
         View bottomSheet = findViewById(R.id.nested_bottom_sheet);
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
-        bottomSheetBehavior.setPeekHeight(120);
+        bottomSheetBehavior.setPeekHeight(170);
         bottomSheetBehavior.setHideable(true);
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
